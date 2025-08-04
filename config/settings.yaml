@@ -1,0 +1,120 @@
+# My Personal Voice Assistant Configuration
+
+# Voice and Audio Settings
+voice:
+  # Speech Recognition
+  speech_recognition:
+    model: "whisper"
+    language: "en"
+    sample_rate: 16000
+    chunk_size: 1024
+    silence_threshold: 0.01
+    silence_duration: 1.0
+  
+  # Speech Synthesis and Voice Cloning
+  speech_synthesis:
+    model: "coqui-tts"
+    voice_cloning:
+      model: "your-tts"
+      sample_rate: 22050
+      voice_samples_dir: "assets/audio/voice_samples"
+      cloned_voices_dir: "assets/models/voice_clones"
+    
+  # Audio Processing
+  audio:
+    input_device: null  # Auto-detect
+    output_device: null  # Auto-detect
+    channels: 1
+    format: "int16"
+    buffer_size: 4096
+
+# Vision and Spatial Awareness Settings
+vision:
+  # Camera Settings
+  camera:
+    device_id: 0
+    resolution: [640, 480]
+    fps: 30
+  
+  # Object Detection
+  object_detection:
+    model: "yolov8"
+    confidence_threshold: 0.5
+    nms_threshold: 0.4
+    classes: ["person", "chair", "table", "book", "laptop", "phone", "cup", "bottle", "lamp", "tv", "remote"]
+    
+  # Spatial Reasoning
+  spatial_reasoning:
+    enabled: true
+    relationship_threshold: 0.3
+    max_objects: 20
+    
+  # Image Processing
+  image_processing:
+    resize_width: 640
+    resize_height: 480
+    normalize: true
+
+# Conversational AI Settings
+conversation:
+  # Language Model
+  llm:
+    provider: "openai"
+    model: "gpt-4"
+    temperature: 0.7
+    max_tokens: 500
+    system_prompt: |
+      You are a helpful AI assistant with spatial awareness. You can see objects in the environment 
+      and understand their relationships. When asked about the environment, use the vision data to 
+      provide accurate, contextual responses. Be conversational and natural in your responses.
+  
+  # Conversation Management
+  conversation:
+    max_history: 50
+    context_window: 10
+    personality:
+      name: "Alex"
+      traits:
+        friendly: 0.8
+        helpful: 0.9
+        professional: 0.7
+        humorous: 0.3
+
+# Application Settings
+app:
+  # UI Settings
+  ui:
+    theme: "light"
+    language: "en"
+    debug_mode: false
+  
+  # Logging
+  logging:
+    level: "INFO"
+    file: "logs/assistant.log"
+    max_size: "10MB"
+    backup_count: 5
+  
+  # Performance
+  performance:
+    max_threads: 4
+    gpu_acceleration: false
+    memory_limit: "2GB"
+
+# API Keys and External Services
+api:
+  openai:
+    api_key: "${OPENAI_API_KEY}"
+    organization: "${OPENAI_ORG_ID}"
+  
+  # Add other API keys as needed
+  # google_cloud:
+  #   api_key: "${GOOGLE_CLOUD_API_KEY}"
+
+# File Paths
+paths:
+  models: "assets/models"
+  audio: "assets/audio"
+  images: "assets/images"
+  logs: "logs"
+  temp: "temp" 
