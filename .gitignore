@@ -58,9 +58,15 @@ logs/
 *.avi
 *.mov
 
-# Images (except test images)
-assets/images/*
-!assets/images/room_vision_test.jpg
+# Images (exclude all images)
+assets/images/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.webp
 
 # Models and large files
 *.pth
