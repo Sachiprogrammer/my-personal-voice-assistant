@@ -374,13 +374,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **OpenAI** for Whisper
 - **Streamlit** for web interface
 
-## 📞 Support
-
-For support and questions:
-- Create an issue on GitHub
-- Check the documentation
-- Review troubleshooting guide
-
----
 
 **Note**: This is a comprehensive AI assistant system. Ensure you have proper permissions and comply with relevant regulations when using voice cloning and camera features. 
